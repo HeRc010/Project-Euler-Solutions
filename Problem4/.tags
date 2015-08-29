@@ -1,0 +1,5 @@
+digit_count	/home/adlawren/Code/PEuler_Solutions/Problem4/solution.cpp	/^const unsigned digit_count = 3;$/;"	variable	line:11
+is_palindrome	/home/adlawren/Code/PEuler_Solutions/Problem4/solution.cpp	/^bool is_palindrome(const unsigned n)$/;"	function	line:13	signature:(const unsigned n)
+power	/home/adlawren/Code/PEuler_Solutions/Problem4/solution.cpp	/^unsigned power(unsigned base, unsigned exponent)$/;"	function	line:34	signature:(unsigned base, unsigned exponent)
+pair_product	/home/adlawren/Code/PEuler_Solutions/Problem4/solution.cpp	/^unsigned pair_product(const pair<unsigned, unsigned> &p)$/;"	function	line:45	signature:(const pair<unsigned, unsigned> &p)
+main	/home/adlawren/Code/PEuler_Solutions/Problem4/solution.cpp	/^int main()$/;"	function	line:50	signature:()

@@ -1,0 +1,4 @@
+N	/home/adlawren/Code/PEuler_Solutions/Problem5/solution.cpp	/^unsigned N = 20;$/;"	variable	line:12
+factorial	/home/adlawren/Code/PEuler_Solutions/Problem5/solution.cpp	/^long factorial(unsigned n)$/;"	function	line:14	signature:(unsigned n)
+divides_evenly	/home/adlawren/Code/PEuler_Solutions/Problem5/solution.cpp	/^bool divides_evenly(long val, unsigned n)$/;"	function	line:25	signature:(long val, unsigned n)
+main	/home/adlawren/Code/PEuler_Solutions/Problem5/solution.cpp	/^int main()$/;"	function	line:36	signature:()

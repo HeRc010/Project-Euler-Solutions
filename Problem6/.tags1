@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+first_n	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^unsigned first_n = 100;$/;"	variable	line:12
+square	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long square(long n)$/;"	function	line:14	signature:(long n)
+sum	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long sum(unsigned n)$/;"	function	line:19	signature:(unsigned n)
+sum_of_squares	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long sum_of_squares(unsigned n)$/;"	function	line:30	signature:(unsigned n)
+main	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^int main()$/;"	function	line:41	signature:()

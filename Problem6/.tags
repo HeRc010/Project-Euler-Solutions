@@ -1,0 +1,5 @@
+first_n	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^unsigned first_n = 100;$/;"	variable	line:12
+square	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long square(long n)$/;"	function	line:14	signature:(long n)
+sum	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long sum(unsigned n)$/;"	function	line:19	signature:(unsigned n)
+sum_of_squares	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^long sum_of_squares(unsigned n)$/;"	function	line:30	signature:(unsigned n)
+main	/home/adlawren/Code/PEuler_Solutions/Problem6/solution.cpp	/^int main()$/;"	function	line:41	signature:()
