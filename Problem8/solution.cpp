@@ -88,29 +88,6 @@ int main()
    if (!in.is_open())
       return -1;
 
-   /*
-   long max_product = 0;
-   while (getline(in, next_line))
-   {
-      cout << "next line: " << next_line << endl;
-
-      for (unsigned i = 0; i < line_length - N + 1; ++i)
-      {
-         long product = 1;
-         for (unsigned j = 0; j < N; ++j)
-         {
-            cout << char_to_unsigned(next_line[i + j]);
-            product *= char_to_unsigned(next_line[i + j]);
-         }
-
-         if (product > max_product)
-            max_product = product;
-
-         cout << endl;
-      }
-   }
-   */
-
    stringstream number_ss;
    while (getline(in, next_line))
    {
@@ -118,7 +95,6 @@ int main()
    }
 
    string number = number_ss.str();
-   cout << number << endl;
 
    long max_product = 0;
    for (unsigned i = 0; i < number.size() - N + 1; ++i)
@@ -126,14 +102,11 @@ int main()
       long product = 1;
       for (unsigned j = 0; j < N; ++j)
       {
-         cout << char_to_unsigned(number[i + j]);
          product *= char_to_unsigned(number[i + j]);
       }
 
       if (product > max_product)
          max_product = product;
-
-      cout << endl;
    }
 
    cout << "Max product is: " << max_product << endl;
