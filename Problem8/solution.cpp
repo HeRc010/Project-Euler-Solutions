@@ -1,47 +1,83 @@
 #include <iostream>
+#include <string>
 #include <vector>
 #include <fstream>
 #include <algorithm>
+#include <sstream>
 
 using namespace std;
 
 // parameters
-unsigned N = 0;
+unsigned line_length = 50;
+unsigned N = 13;
 
 // split string according to the given character delimiter
+// v1
+void split_string(vector<string> &res, const string &s, const char delimiter)
+{
+   if (s.empty())
+      return;
+
+   size_t pos = s.find(delimiter);
+   if (pos != string::npos)
+   {
+      res.push_back(s.substr(0, pos));
+      split_string(res, s.substr(pos + 1, s.size()), delimiter);
+   }
+   else
+   {
+      res.push_back(s);
+   }
+}
+
+// v2
 vector<string> split_string(const string &s, const char delimiter)
 {
-   string to_split = s;
    vector<string> res;
 
-   auto it = find(s.begin(), s.end(), delimiter);
-   if (it != s.end())
-   {
-      // found it
-   }
+   // ensure the string has atleast one character
+   if (s.empty())
+      return res;
 
    size_t pos;
    pos = s.find(delimiter);
    if (pos != string::npos)
    {
       // found it
-      split_string(string(s.begin(), to_split.begin() + pos), delimiter);
+      res.push_back(s.substr(0, pos));
+
+      vector<string> to_add = split_string(s.substr(pos + 1, s.size()), delimiter);
+      res.insert(res.end(), to_add.begin(), to_add.end());
    }
    else
    {
-
-   }
-
-   if (0)
-   {
-
-   }
-   else
-   {
-
+      res.push_back(s);
    }
 
    return res;
+}
+
+unsigned char_to_unsigned(char c)
+{
+   if (c < 48)
+      return -1;
+   if (c > 57)
+      return -1;
+
+   return unsigned(c) - 48;
+}
+
+void test_split(const string &line)
+{
+   // second test
+   vector<string> split = split_string(line, '.');
+
+   cout << "Number of substrings: " << split.size() << endl;
+   cout << "Values:" << endl;
+   for (auto &s : split)
+   {
+      cout << s << endl;
+   }
 }
 
 int main()
@@ -49,11 +85,59 @@ int main()
    ifstream in("input.txt");
 
    string next_line;
-   while (!in.bad())
+   if (!in.is_open())
+      return -1;
+
+   /*
+   long max_product = 0;
+   while (getline(in, next_line))
    {
-      cin >> next_line;
-      cout << next_line << endl;
+      cout << "next line: " << next_line << endl;
+
+      for (unsigned i = 0; i < line_length - N + 1; ++i)
+      {
+         long product = 1;
+         for (unsigned j = 0; j < N; ++j)
+         {
+            cout << char_to_unsigned(next_line[i + j]);
+            product *= char_to_unsigned(next_line[i + j]);
+         }
+
+         if (product > max_product)
+            max_product = product;
+
+         cout << endl;
+      }
+   }
+   */
+
+   stringstream number_ss;
+   while (getline(in, next_line))
+   {
+      number_ss << next_line;
    }
 
+   string number = number_ss.str();
+   cout << number << endl;
+
+   long max_product = 0;
+   for (unsigned i = 0; i < number.size() - N + 1; ++i)
+   {
+      long product = 1;
+      for (unsigned j = 0; j < N; ++j)
+      {
+         cout << char_to_unsigned(number[i + j]);
+         product *= char_to_unsigned(number[i + j]);
+      }
+
+      if (product > max_product)
+         max_product = product;
+
+      cout << endl;
+   }
+
+   cout << "Max product is: " << max_product << endl;
+
+   in.close();
    return 0;
 }
